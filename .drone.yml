@@ -1,0 +1,46 @@
+workspace:
+  base: /app
+  path: .
+
+pipeline:
+  test-pipes-python2:
+    image: python:2.7
+    commands:
+      - pip install -U pip setuptools wheel
+      - cd /app
+      - pip install -e .[redis,gevent,celery,swagger,crypto,memcached,datadog]
+      - flake8
+      - export PIPES_REDIS_HOST=redis
+      - export PIPES_MEMCACHED_SERVERS='json:["memcached:11211"]'
+      - pytest --cov-config .coveragerc --cov=pipes --cov-report term-missing .
+
+  test-pipes-python3:
+    image: python:3.7
+    secrets: [artifactory_user, artifactory_password]
+    commands:
+      - pip install -U pip setuptools wheel
+      - cd /app
+      - pip install -e .[redis,gevent,celery,swagger,crypto,memcached,datadog]
+      - flake8
+      - export PIPES_REDIS_HOST=redis
+      - export PIPES_MEMCACHED_SERVERS='json:["memcached:11211"]'
+      - pytest --cov-config .coveragerc --cov=pipes --cov-report term-missing .
+
+  artifactory-publish:
+    image: python:2.7
+    secrets: [artifactory_user, artifactory_password]
+    commands:
+      - pip install twine
+      - mkdir dist
+      - git fetch --tags
+      - cd /app
+      - python setup.py sdist --formats=bztar --dist-dir=/app/dist
+      - twine upload /app/dist/pipes-${DRONE_TAG}.tar.bz2 -r local
+    when:
+      event: [tag]
+
+services:
+  redis:
+    image: redis:4.0.10
+  memcached:
+    image: memcached:1.4.34

@@ -1,0 +1,10 @@
+key1: yaml value1
+key2:
+  key2.1: yaml value2.1
+  key2.2: [yaml, value2.2]
+key3:
+  key3.1: yaml value3.1
+  key3.2: yaml value3.2
+  key3.3:
+    key3.3.1: yaml value3.3.1
+    key3.3.2: yaml value3.3.2
