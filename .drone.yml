@@ -17,6 +17,9 @@ steps:
       - pip install -e .[tests]
       - flake8
       - pytest --cov-config .coveragerc --cov=pypipes --cov-report term-missing .
+    when:
+      event:
+        - push
 
   - name: test-python3
     image: python:3.7
@@ -28,6 +31,9 @@ steps:
       - pip install -e .[tests]
       - flake8
       - pytest --cov-config .coveragerc --cov=pypipes --cov-report term-missing .
+    when:
+      event:
+        - push
 
   - name: dist
     image: python:3.7
