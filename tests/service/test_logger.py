@@ -1,11 +1,11 @@
 from logging import LoggerAdapter
 
-from pipes.config import Config
-from pipes.service.logger import logger_context, init_pipe_log, init_logging, \
+from pypipes.config import Config
+from pypipes.service.logger import logger_context, init_pipe_log, init_logging, \
     DEFAULT_LOG_CONFIG, pipe_logger
 from mock import patch
 
-from pipes.context import context
+from pypipes.context import context
 
 
 def test_logger_context():
@@ -31,7 +31,7 @@ def test_logger_custom_extras_context():
     assert logger.extra == {'extra1': 'value1', 'extra2': 'fixed_value'}
 
 
-@patch('pipes.service.logger.logging')
+@patch('pypipes.service.logger.logging')
 def test_init_pipe_log(logging_mock):
     # just verify that the func has no error inside
     init_pipe_log()
@@ -39,7 +39,7 @@ def test_init_pipe_log(logging_mock):
     logging_mock.StreamHandler.assert_called_once_with()
 
 
-@patch('pipes.service.logger.logging')
+@patch('pypipes.service.logger.logging')
 def test_init_pipe_log_file(logging_mock):
     # just verify that the func has no error inside
     init_pipe_log(pipe_logger_name='test', log_file='test.log')
@@ -47,13 +47,13 @@ def test_init_pipe_log_file(logging_mock):
     logging_mock.FileHandler.assert_called_once_with('test.log')
 
 
-@patch('pipes.service.logger.logging')
+@patch('pypipes.service.logger.logging')
 def test_init_logging(logging_mock):
     init_logging()
     logging_mock.config.dictConfig.assert_called_once_with(DEFAULT_LOG_CONFIG)
 
 
-@patch('pipes.service.logger.logging')
+@patch('pypipes.service.logger.logging')
 def test_init_logging_config(logging_mock):
     logging_config = {'version': '1.0'}
     config = Config({'logging': logging_config})

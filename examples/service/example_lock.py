@@ -2,9 +2,9 @@ from __future__ import print_function
 
 from time import sleep
 
-from pipes import MemLock as Lock
+from pypipes import MemLock as Lock
 
-# from pipes.service.lock import RedisLock as Lock
+# from pypipes.service.lock import RedisLock as Lock
 
 lock = Lock()
 

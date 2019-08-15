@@ -1,8 +1,8 @@
 import pytest
-from pipes.context import LazyContextCollection, apply_injections, context, injections_handler, \
+from pypipes.context import LazyContextCollection, apply_injections, context, injections_handler, \
     UseContextSubstitution, ContextWrapper
 
-from pipes.context.config import config
+from pypipes.context.config import config
 
 
 class MyService(UseContextSubstitution):

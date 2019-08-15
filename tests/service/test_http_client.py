@@ -2,8 +2,8 @@ import pytest
 from mock import Mock
 from requests import Response, Request
 
-from pipes.config import Config
-from pipes.service.http_client import create_http_client, HttpClient, HttpResponse, \
+from pypipes.config import Config
+from pypipes.service.http_client import create_http_client, HttpClient, HttpResponse, \
     ExtendedHTTPError
 
 

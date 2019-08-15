@@ -10,10 +10,10 @@
 # if new program version faced with some problem and its cursors can't be further used
 from __future__ import print_function
 
-from pipes.service.cursor_storage import cursor_storage_context, versioned_cursor_storage_context
-from pipes.service.storage import memory_storage_pool
+from pypipes.service.cursor_storage import cursor_storage_context, versioned_cursor_storage_context
+from pypipes.service.storage import memory_storage_pool
 
-from pipes.context import LazyContextCollection
+from pypipes.context import LazyContextCollection
 
 # we will use LazyContextCollection to emulate context creation by Infrastructure
 context = LazyContextCollection({

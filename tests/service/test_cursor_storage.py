@@ -1,4 +1,4 @@
-from pipes.service.cursor_storage import VersionedCursorStorage, CursorStorage
+from pypipes.service.cursor_storage import VersionedCursorStorage, CursorStorage
 
 
 def test_hash_save_get(cursor_storage, any_object):

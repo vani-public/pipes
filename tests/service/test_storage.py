@@ -1,4 +1,4 @@
-from pipes.service.storage import StorageItem
+from pypipes.service.storage import StorageItem
 
 
 def test_get_item(storage):

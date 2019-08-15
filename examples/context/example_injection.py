@@ -1,6 +1,6 @@
 from __future__ import print_function
 
-from pipes.context import apply_injections, injections_handler
+from pypipes.context import apply_injections, injections_handler
 
 
 def target_function(context1, context2, context3='func_default3', context4='func_default4'):

@@ -1,10 +1,7 @@
-from __future__ import print_function
-
 import time
 
-from pipes import MemStorage as Storage
-
-# from pipes.service.storage import RedisStorage as Storage
+from pypipes.service.storage import MemStorage as Storage
+# from pypipes.service.storage import RedisStorage as Storage
 
 
 service = Storage()
@@ -12,38 +9,38 @@ service = Storage()
 # Service operation timings
 count = 10000
 start_time = time.time()
-for i in xrange(count):
+for i in range(count):
     service.save(str(i), {'message': {'a': 'value_a', 'b': 'value_b', 'c': 'value_c'}},
                  aliases=['alias_%s' % i],
                  collections=['all_values'])
 print('SAVE time', time.time() - start_time)
 
 start_time = time.time()
-for i in xrange(count):
+for i in range(count):
     service.save(str(i), {'message': {'a': 'value_a', 'b': 'value_b', 'c': 'value_c'}},
                  aliases=['alias_%s' % i],
                  collections=['all_values'])
 print('UPDATE time', time.time() - start_time)
 
 start_time = time.time()
-for i in xrange(count):
+for i in range(count):
     service.delete('alias_%s' % i)
 print('DELETE time', time.time() - start_time)
 
 start_time = time.time()
-for i in xrange(count):
+for i in range(count):
     service.save(str(i), {'message': {'a': 'value_a', 'b': 'value_b', 'c': 'value_c'}},
                  aliases=['alias_%s' % i],
                  collections=['all_values'])
 print('SAVE again time', time.time() - start_time)
 
 start_time = time.time()
-for i in xrange(count):
+for i in range(count):
     service.get_item('alias_%s' % i)
 print('GET time', time.time() - start_time)
 
 start_time = time.time()
-for i in xrange(count):
+for i in range(count):
     service.add_alias(str(i), 'alias2_%s' % i)
 print('ADD ALIAS time', time.time() - start_time)
 

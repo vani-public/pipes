@@ -1,16 +1,16 @@
 # This example demonstrate how you may redefine existing context for some processor
 import logging
 
-from pipes.config import Config
-from pipes.context.define import define, define_config
-from pipes.context.pagination import pagination
-from pipes.infrastructure.inline import RunInline
-from pipes.processor import pipe_processor
-from pipes.processor.event import Event
-from pipes.processor.message import Message
-from pipes.service.logger import logger_context
+from pypipes.config import Config
+from pypipes.context.define import define, define_config
+from pypipes.context.pagination import pagination
+from pypipes.infrastructure.inline import RunInline
+from pypipes.processor import pipe_processor
+from pypipes.processor.event import Event
+from pypipes.processor.message import Message
+from pypipes.service.logger import logger_context
 
-from pipes.program import Program
+from pypipes.program import Program
 
 
 # lets assume we have a processor with some predefined context

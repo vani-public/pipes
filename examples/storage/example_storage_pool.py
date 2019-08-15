@@ -1,9 +1,9 @@
 from __future__ import print_function
 
-from pipes.config import Config
-from pipes.service.storage import redis_storage_pool
+from pypipes.config import Config
+from pypipes.service.storage import redis_storage_pool
 
-from pipes.context import LazyContextCollection
+from pypipes.context import LazyContextCollection
 
 # most pipe processor and content managers expects that storage is an IContentPool
 # see service/example_pool.py for pool usage example

@@ -1,9 +1,9 @@
 import pytest
-from pipes.context.define import define
-from pipes.processor import pipe_processor, event_processor
+from pypipes.context.define import define
+from pypipes.processor import pipe_processor, event_processor
 from mock import Mock
 
-from pipes.program import Program
+from pypipes.program import Program
 
 
 @event_processor('event1')

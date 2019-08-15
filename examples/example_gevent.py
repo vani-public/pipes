@@ -15,20 +15,20 @@ from datetime import datetime
 import logging
 import gevent
 
-from pipes.context import message
-from pipes.context.cache import cache
-from pipes.context import pagination
-from pipes.context import Sync
-from pipes.context import cursor
-from pipes import memory_cache_pool
-from pipes.service.counter import memory_counter_pool
-from pipes import memory_lock_pool
-from pipes import memory_storage_pool
-from pipes import GeventInf
-from pipes.processor import pipe_processor
-from pipes.processor import Event
-from pipes.processor import Scheduler
-from pipes.program import Program
+from pypipes.context import message
+from pypipes.context.cache import cache
+from pypipes.context import pagination
+from pypipes.context import Sync
+from pypipes.context import cursor
+from pypipes import memory_cache_pool
+from pypipes.service.counter import memory_counter_pool
+from pypipes import memory_lock_pool
+from pypipes import memory_storage_pool
+from pypipes import GeventInf
+from pypipes.processor import pipe_processor
+from pypipes.processor import Event
+from pypipes.processor import Scheduler
+from pypipes.program import Program
 
 logging.basicConfig(level=logging.INFO)
 
@@ -63,7 +63,7 @@ def processor1(message, processor_id, response, logger, page=1):
 def cached_processor(message, logger):
     """
     This processor demonstrates a work of a `@cache` context manager
-    :type message: pipes.message.FrozenMessage
+    :type message: pypipes.message.FrozenMessage
     :type logger: logging.LoggerAdapter
     """
     logger.info('cached_processor does some processing for page %s', message.total_page)

@@ -1,8 +1,8 @@
 import pytest
-from pipes.context.define import define
+from pypipes.context.define import define
 from mock import Mock
 
-from pipes.processor import Processor, pipe_processor, pipe_attachment, event_processor
+from pypipes.processor import Processor, pipe_processor, pipe_attachment, event_processor
 
 
 class EmitProcessor(Processor):

@@ -1,6 +1,6 @@
 from __future__ import print_function
 
-from pipes.message import Message, FrozenMessage, MessageUpdate
+from pypipes.message import Message, FrozenMessage, MessageUpdate
 
 # pipeline message is typically a dictionary
 # Message class allows access message items like object attributes

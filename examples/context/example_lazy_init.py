@@ -1,6 +1,6 @@
 from __future__ import print_function
 
-from pipes.context import (
+from pypipes.context import (
     context, IContextFactory, LazyContextCollection, apply_context_to_kwargs)
 
 

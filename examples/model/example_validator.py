@@ -4,7 +4,7 @@ from __future__ import print_function
 
 from datetime import datetime
 
-from pipes.model import Validator
+from pypipes.model import Validator
 
 
 now = datetime.now()

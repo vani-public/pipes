@@ -1,9 +1,9 @@
 from mock import Mock
 
-from pipes.context import LazyContextCollection, context
-from pipes.context.factory import ContextPoolFactory, CustomContextPoolFactory, \
+from pypipes.context import LazyContextCollection, context
+from pypipes.context.factory import ContextPoolFactory, CustomContextPoolFactory, \
     LazyContextPoolFactory, distributed_pool, DistributedPool
-from pipes.context.pool import ContextPool
+from pypipes.context.pool import ContextPool
 
 
 def test_context_pool_factory():

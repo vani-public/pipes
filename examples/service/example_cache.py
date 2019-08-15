@@ -2,7 +2,7 @@ from __future__ import print_function
 
 import time
 
-from pipes import MemoryCache  # noqa
+from pypipes import MemoryCache  # noqa
 
 cache = MemoryCache()
 # cache = MemcachedCache(prefix='example')

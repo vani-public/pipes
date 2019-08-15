@@ -1,11 +1,11 @@
 from time import sleep
 
 import pytest
-from pipes.config import Config
-from pipes.context.pool import ContextPool
-from pipes.exceptions import QuotaExceededException
+from pypipes.config import Config
+from pypipes.context.pool import ContextPool
+from pypipes.exceptions import QuotaExceededException
 
-from pipes.service.quota import Quota, HourQuota, DayQuota, MonthQuota, QuotaPool, UnlimitedQuota
+from pypipes.service.quota import Quota, HourQuota, DayQuota, MonthQuota, QuotaPool, UnlimitedQuota
 
 
 def test_quota(memory_rate_counter):

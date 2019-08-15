@@ -1,6 +1,6 @@
 import pytest
 from mock import Mock
-from pipes.service.cache import DefaultExpirationWrapper
+from pypipes.service.cache import DefaultExpirationWrapper
 
 
 @pytest.mark.parametrize('default_ttl', [None, 10])

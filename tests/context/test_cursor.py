@@ -1,11 +1,11 @@
 import pytest
-from pipes.context import context, message
-from pipes.context.cursor import cursor
-from pipes.processor import pipe_processor
+
+from pypipes.context import context, message
+from pypipes.context.cursor import cursor
+from pypipes.processor import pipe_processor
 
 
-def test_cursor_update(response_mock, infrastructure_mock, program_mock,
-                plain_cursor_storage, lock_pool_mock):
+def test_cursor_update(response_mock, infrastructure_mock, program_mock, plain_cursor_storage, lock_pool_mock):
 
     @cursor()
     @pipe_processor

@@ -3,7 +3,7 @@ from __future__ import print_function
 import os
 from pprint import pprint
 
-from pipes import (
+from pypipes import (
     from_file, Config, from_environ, merge, from_url, InheritedConfig, ClientConfig)
 
 # read config dict from yaml file

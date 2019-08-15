@@ -37,7 +37,7 @@ def test_expiration(cache):
         'key3': 'value3',
         'key2': 'value2',
         'key1': 'value1'}
-    sleep(1)
+    sleep(1.1)
     assert cache.get_many(['key1', 'key2', 'key3']) == {
         'key3': None,
         'key2': None,

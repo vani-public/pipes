@@ -1,46 +1,59 @@
-workspace:
-  base: /app
-  path: .
+###########################################################################################
+## SECRETS REQUIRED:
+## - pypi_username : PyPi login credentials to push image
+## - pypi_password : PyPi login credentials to push image
+###########################################################################################
+kind: pipeline
+name: default
 
-pipeline:
-  test-pipes-python2:
+steps:
+  - name: test-python2
     image: python:2.7
+    environment:
+      PIPES_REDIS_HOST: redis
+      PIPES_MEMCACHED_SERVERS: json:["memcached:11211"]
     commands:
-      - pip install -U pip setuptools wheel
-      - cd /app
-      - pip install -e .[redis,gevent,celery,swagger,crypto,memcached,datadog]
+      - pip install -U pip setuptools wheel flake8
+      - pip install -e .[tests]
       - flake8
-      - export PIPES_REDIS_HOST=redis
-      - export PIPES_MEMCACHED_SERVERS='json:["memcached:11211"]'
-      - pytest --cov-config .coveragerc --cov=pipes --cov-report term-missing .
+      - pytest --cov-config .coveragerc --cov=pypipes --cov-report term-missing .
+    when:
+      event:
+        - push
 
-  test-pipes-python3:
+  - name: test-python3
     image: python:3.7
-    secrets: [artifactory_user, artifactory_password]
-    commands:
-      - pip install -U pip setuptools wheel
-      - cd /app
-      - pip install -e .[redis,gevent,celery,swagger,crypto,memcached,datadog]
+    environment:
+      PIPES_REDIS_HOST: redis
+      PIPES_MEMCACHED_SERVERS: json:["memcached:11211"]
+    commends:
+      - pip install -U pip setuptools wheel flake8
+      - pip install -e .[tests]
       - flake8
-      - export PIPES_REDIS_HOST=redis
-      - export PIPES_MEMCACHED_SERVERS='json:["memcached:11211"]'
-      - pytest --cov-config .coveragerc --cov=pipes --cov-report term-missing .
+      - pytest --cov-config .coveragerc --cov=pypipes --cov-report term-missing .
+    when:
+      event:
+        - push
 
-  artifactory-publish:
-    image: python:2.7
-    secrets: [artifactory_user, artifactory_password]
+  - name: dist
+    image: python:3.7
+    environment:
+      PYPI_USERNAME:
+        from_secret: pypi_username
+      PYPI_PASSWORD:
+        from_secret: pypi_password
     commands:
       - pip install twine
       - mkdir dist
       - git fetch --tags
-      - cd /app
-      - python setup.py sdist --formats=bztar --dist-dir=/app/dist
-      - twine upload /app/dist/pipes-${DRONE_TAG}.tar.bz2 -r local
+      - python setup.py sdist
+      - twine upload dist/pypipes-${DRONE_TAG}.zip -u $PYPI_USERNAME -p $PYPI_PASSWORD
     when:
-      event: [tag]
+      event:
+        - tag
 
 services:
-  redis:
+  - name: redis
     image: redis:4.0.10
-  memcached:
+  - name: memcached
     image: memcached:1.4.34

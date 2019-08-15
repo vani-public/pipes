@@ -8,12 +8,12 @@ from time import sleep
 
 if False:
     # this example uses MemcachedRateCounter
-    from pipes import MemcachedRateCounter
+    from pypipes import MemcachedRateCounter
     counter = MemcachedRateCounter('test')
     counter.memcached.flush_all()
 else:
     # this example uses MemoryRateCounter
-    from pipes import MemoryRateCounter
+    from pypipes import MemoryRateCounter
     counter = MemoryRateCounter()
 
 print('increment key1 on 1:', counter.increment('key1', threshold=2))

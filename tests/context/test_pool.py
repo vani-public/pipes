@@ -1,5 +1,5 @@
-from pipes.context import context
-from pipes.context.pool import ContextPool, LazyContextPool
+from pypipes.context import context
+from pypipes.context.pool import ContextPool, LazyContextPool
 
 
 def test_context_pool():

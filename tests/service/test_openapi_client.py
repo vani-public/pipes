@@ -1,8 +1,8 @@
 from bravado.client import SwaggerClient
-from pipes.config import Config
+from pypipes.config import Config
 from mock import Mock, patch
 
-from pipes.service.openapi_client import configure_api_client_factory
+from pypipes.service.openapi_client import configure_api_client_factory
 
 API_SPEC = {
     'swagger': '2.0',

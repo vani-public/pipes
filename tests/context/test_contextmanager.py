@@ -1,7 +1,7 @@
 import pytest
 from mock import Mock
-from pipes.context.manager import pipe_contextmanager
-from pipes.processor import pipe_processor
+from pypipes.context.manager import pipe_contextmanager
+from pypipes.processor import pipe_processor
 
 
 def test_contextmanager():
@@ -80,7 +80,7 @@ def test_contextmanager_reraise_error():
         try:
             yield {'context': 'value'}
             assert False
-        except:
+        except Exception:
             raise
 
     @error_handler
