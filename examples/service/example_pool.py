@@ -6,8 +6,8 @@ ServicePoolProvider returns default service
 """
 from __future__ import print_function
 
-from pipes.context import ContextPool, LazyContextPool
-from pipes.context import context, UseContextSubstitution
+from pypipes.context import ContextPool, LazyContextPool
+from pypipes.context import context, UseContextSubstitution
 
 
 class MyStorageService(object):

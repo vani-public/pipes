@@ -1,8 +1,8 @@
 from __future__ import print_function
 
-from pipes.context import context, apply_context_to_kwargs
+from pypipes.context import context, apply_context_to_kwargs
 
-from pipes.context.config import config
+from pypipes.context.config import config
 
 context_dict = {
     'key1': 'value1',

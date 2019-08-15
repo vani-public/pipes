@@ -1,21 +1,21 @@
 import os
 
 import pytest
-from pipes.config import ClientConfig, get_config
-from pipes.infrastructure.base import Infrastructure
-from pipes.infrastructure.response.listener import ListenerResponseHandler
-from pipes.model import Model
-from pipes.service.base_client import get_redis_client, get_memcached_client
-from pipes.service.cache import MemoryCache, RedisCache, MemcachedCache
-from pipes.service.counter import MemCounter, RedisCounter
-from pipes.service.cursor_storage import CursorStorage, VersionedCursorStorage, ICursorStorage
-from pipes.service.lock import RedisLock, MemLock, ILock
-from pipes.service.metric import DataDogMetrics, LogMetrics, MetricDecorator
-from pipes.service.rate_counter import MemoryRateCounter, MemcachedRateCounter
-from pipes.service.storage import RedisStorage, MemStorage
 from mock import Mock
 
-from pipes.context.factory import ContextPoolFactory
+from pypipes.config import ClientConfig, get_config
+from pypipes.context.factory import ContextPoolFactory
+from pypipes.infrastructure.base import Infrastructure
+from pypipes.infrastructure.response.listener import ListenerResponseHandler
+from pypipes.model import Model
+from pypipes.service.base_client import get_redis_client, get_memcached_client
+from pypipes.service.cache import MemoryCache, RedisCache, MemcachedCache
+from pypipes.service.counter import MemCounter, RedisCounter
+from pypipes.service.cursor_storage import CursorStorage, VersionedCursorStorage, ICursorStorage
+from pypipes.service.lock import RedisLock, MemLock, ILock
+from pypipes.service.metric import DataDogMetrics, LogMetrics, MetricDecorator
+from pypipes.service.rate_counter import MemoryRateCounter, MemcachedRateCounter
+from pypipes.service.storage import RedisStorage, MemStorage
 
 
 @pytest.fixture(scope='session')

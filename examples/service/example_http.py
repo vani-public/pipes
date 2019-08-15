@@ -2,13 +2,13 @@ from __future__ import print_function
 
 import logging
 
-from pipes.config import Config
-from pipes.service.cache import memory_cache_pool
-from pipes.service.http_client import http_client_context, http_client_pool
-from pipes.service.metric import log_metrics_context
+from pypipes.config import Config
+from pypipes.service.cache import memory_cache_pool
+from pypipes.service.http_client import http_client_context, http_client_pool
+from pypipes.service.metric import log_metrics_context
 from requests import ConnectionError
 
-from pipes.context import LazyContextCollection
+from pypipes.context import LazyContextCollection
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

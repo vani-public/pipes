@@ -12,24 +12,24 @@ This example demonstrate a usage of:
 """
 from datetime import datetime
 
-from pipes.config import Config, merge, from_environ
-from pipes.context import message
-from pipes.context.cursor import cursor
-from pipes.context.pagination import pagination
-from pipes.context.sync import Sync
-from pipes.infrastructure.command import run_command, handle_command_error, Command
-from pipes.infrastructure.command.cursor import cursor_subcommand
-from pipes.infrastructure.on_celery import CeleryInf
-from pipes.processor import pipe_processor
-from pipes.processor.event import Event
-from pipes.processor.scheduler import Scheduler
-from pipes.service.counter import redis_counter_pool
-from pipes.service.cursor_storage import versioned_cursor_storage_context
-from pipes.service.lock import redis_lock_pool
-from pipes.service.logger import logger_context, init_pipe_log
-from pipes.service.storage import redis_storage_pool
+from pypipes.config import Config, merge, from_environ
+from pypipes.context import message
+from pypipes.context.cursor import cursor
+from pypipes.context.pagination import pagination
+from pypipes.context.sync import Sync
+from pypipes.infrastructure.command import run_command, handle_command_error, Command
+from pypipes.infrastructure.command.cursor import cursor_subcommand
+from pypipes.infrastructure.on_celery import CeleryInf
+from pypipes.processor import pipe_processor
+from pypipes.processor.event import Event
+from pypipes.processor.scheduler import Scheduler
+from pypipes.service.counter import redis_counter_pool
+from pypipes.service.cursor_storage import versioned_cursor_storage_context
+from pypipes.service.lock import redis_lock_pool
+from pypipes.service.logger import logger_context, init_pipe_log
+from pypipes.service.storage import redis_storage_pool
 
-from pipes.program import Program
+from pypipes.program import Program
 
 
 @pipe_processor

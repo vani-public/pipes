@@ -13,20 +13,20 @@ This example demonstrate a usage of:
 import logging
 from time import sleep
 
-from pipes.config import Config
-from pipes.context import message, context
-from pipes.infrastructure.command import run_command, handle_command_error
-from pipes.infrastructure.command.job import JobCommand
-from pipes.infrastructure.on_celery import CeleryInf
-from pipes.processor import pipe_processor
-from pipes.processor.event import Event
-from pipes.processor.message import Message
-from pipes.program import Program
-from pipes.service.lock import local_redis_lock_pool
-from pipes.service.logger import logger_context, init_logging, pipe_logger
-from pipes.service.storage import local_redis_storage_pool
+from pypipes.config import Config
+from pypipes.context import message, context
+from pypipes.infrastructure.command import run_command, handle_command_error
+from pypipes.infrastructure.command.job import JobCommand
+from pypipes.infrastructure.on_celery import CeleryInf
+from pypipes.processor import pipe_processor
+from pypipes.processor.event import Event
+from pypipes.processor.message import Message
+from pypipes.program import Program
+from pypipes.service.lock import local_redis_lock_pool
+from pypipes.service.logger import logger_context, init_logging, pipe_logger
+from pypipes.service.storage import local_redis_storage_pool
 
-from pipes.context.job import Job
+from pypipes.context.job import Job
 
 
 @pipe_processor

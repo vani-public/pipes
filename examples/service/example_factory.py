@@ -1,8 +1,8 @@
 from __future__ import print_function
 
-from pipes.context import LazyContextCollection
+from pypipes.context import LazyContextCollection
 
-from pipes.context.factory import (
+from pypipes.context.factory import (
     ContextPoolFactory, LazyContextPoolFactory, LazyContext, distributed_pool)
 
 

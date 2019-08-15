@@ -2,12 +2,12 @@ from __future__ import print_function
 
 from time import sleep
 
-from pipes.config import Config
-from pipes.context import LazyContextCollection
-from pipes.exceptions import QuotaExceededException
-from pipes.service.rate_counter import memory_rate_pool
+from pypipes.config import Config
+from pypipes.context import LazyContextCollection
+from pypipes.exceptions import QuotaExceededException
+from pypipes.service.rate_counter import memory_rate_pool
 
-from pipes.service.quota import quota_pool
+from pypipes.service.quota import quota_pool
 
 # quota_pool is a LazyContext that initializes a QuotaPool object
 # from config and rate_counter contexts.

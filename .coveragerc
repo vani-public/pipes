@@ -1,0 +1,16 @@
+[run]
+source = pypipes
+omit =
+    tests/
+
+[report]
+exclude_lines =
+    pragma: no cover
+    raise NotImplementedError
+    raise AssertionError
+    if __name__ == '__main__':
+    declare_namespace
+ignore_errors = False
+skip_covered = False
+omit =
+    tests/

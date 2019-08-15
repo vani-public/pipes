@@ -12,20 +12,20 @@ This example demonstrate a usage of:
 """
 import logging
 
-from pipes.context import message
-from pipes.context.manager import pipe_contextmanager
-from pipes.context.metrics import collect_metrics
-from pipes.context.pagination import pagination
-from pipes.context.pool import ContextPool
-from pipes.context.sync import Sync
-from pipes.infrastructure.inline import RunInline
-from pipes.processor import pipe_processor
-from pipes.processor.scheduler import Scheduler
-from pipes.program import Program
-from pipes.service.counter import MemCounter
-from pipes.service.metric import log_metrics_context
+from pypipes.context import message
+from pypipes.context.manager import pipe_contextmanager
+from pypipes.context.metrics import collect_metrics
+from pypipes.context.pagination import pagination
+from pypipes.context.pool import ContextPool
+from pypipes.context.sync import Sync
+from pypipes.infrastructure.inline import RunInline
+from pypipes.processor import pipe_processor
+from pypipes.processor.scheduler import Scheduler
+from pypipes.program import Program
+from pypipes.service.counter import MemCounter
+from pypipes.service.metric import log_metrics_context
 
-from pipes.context.factory import LazyContext
+from pypipes.context.factory import LazyContext
 
 logging.basicConfig(level=logging.INFO, format='%(program_id)s.%(processor_id)s: > %(message)s')
 
@@ -37,7 +37,7 @@ logging.basicConfig(level=logging.INFO, format='%(program_id)s.%(processor_id)s:
 def start_notification(logger, metrics):
     """
     :type logger: logging.LogAdapter
-    :type metrics: pipes.service.metric.IMetrics
+    :type metrics: pypipes.service.metric.IMetrics
     """
     logger.info('Job started')
     metrics.annotation('Job started')
@@ -57,7 +57,7 @@ def processor1(upper_level_page, response, logger, page=0):
     """
     :param upper_level_page: page index received from previous processor
     :param response: response handler
-    :type response: pipes.infrastructure.response.IResponseHandler
+    :type response: pypipes.infrastructure.response.IResponseHandler
     :param page: page index, emited by @pagination contextmanager
     :type logger: logging.LogAdapter
     """
@@ -72,7 +72,7 @@ def processor1(upper_level_page, response, logger, page=0):
 def processor2(message, logger):
     """
     :param message: input message
-    :type message: pipes.message.Message
+    :type message: pypipes.message.Message
     :type logger: logging.LogAdapter
     """
     logger.info('got %s', message)
@@ -82,7 +82,7 @@ def processor2(message, logger):
 def end_notification(logger, metrics):
     """
     :type logger: logging.LogAdapter
-    :type metrics: pipes.service.metric.IMetrics
+    :type metrics: pypipes.service.metric.IMetrics
     """
     logger.info('Job completed')
     metrics.annotation('Job completed')

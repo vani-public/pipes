@@ -1,6 +1,6 @@
 import pytest
 
-from pipes.context import LazyContextCollection, IContextFactory, INamedContextFactory
+from pypipes.context import LazyContextCollection, IContextFactory, INamedContextFactory
 
 
 class SumContextFactory(IContextFactory):

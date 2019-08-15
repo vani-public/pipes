@@ -2,9 +2,9 @@ from __future__ import print_function
 
 from pprint import pformat
 
-from pipes import MemStorage as Storage
+from pypipes import MemStorage as Storage
 
-# from pipes.service.storage import RedisStorage as Storage
+# from pypipes.service.storage import RedisStorage as Storage
 
 
 service = Storage()

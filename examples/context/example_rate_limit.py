@@ -1,14 +1,14 @@
-from pipes.context import message
-from pipes.context.rate_limit import rate_limit_guard
-from pipes.infrastructure.on_gevent import GeventInf
-from pipes.processor import pipe_processor
-from pipes.processor.scheduler import Scheduler
-from pipes.service.counter import memory_counter_pool
-from pipes.service.lock import memory_lock_pool
-from pipes.service.logger import logger_context, init_logging
-from pipes.service.rate_counter import memory_rate_pool
+from pypipes.context import message
+from pypipes.context.rate_limit import rate_limit_guard
+from pypipes.infrastructure.on_gevent import GeventInf
+from pypipes.processor import pipe_processor
+from pypipes.processor.scheduler import Scheduler
+from pypipes.service.counter import memory_counter_pool
+from pypipes.service.lock import memory_lock_pool
+from pypipes.service.logger import logger_context, init_logging
+from pypipes.service.rate_counter import memory_rate_pool
 
-from pipes.program import Program
+from pypipes.program import Program
 
 
 @pipe_processor

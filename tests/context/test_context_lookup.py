@@ -1,7 +1,7 @@
 import pytest
-from pipes.context import context, apply_context_to_kwargs, message, use_context_lookup
+from pypipes.context import context, apply_context_to_kwargs, message, use_context_lookup
 
-from pipes.context.config import config
+from pypipes.context.config import config
 
 
 @pytest.fixture

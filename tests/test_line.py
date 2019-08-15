@@ -1,6 +1,6 @@
-from pipes.context.define import define
-from pipes.processor import pipe_processor
-from pipes.processor.event import Event
+from pypipes.context.define import define
+from pypipes.processor import pipe_processor
+from pypipes.processor.event import Event
 
 
 @pipe_processor

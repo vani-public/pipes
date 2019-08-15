@@ -3,12 +3,12 @@
 
 import logging
 
-from pipes.context import context
-from pipes.infrastructure.inline import RunInline
-from pipes.processor.event import Event
-from pipes.processor.message import Message
+from pypipes.context import context
+from pypipes.infrastructure.inline import RunInline
+from pypipes.processor.event import Event
+from pypipes.processor.message import Message
 
-from pipes.program import Program
+from pypipes.program import Program
 
 logging.basicConfig(level=logging.INFO)
 
