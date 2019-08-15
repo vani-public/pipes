@@ -1,5 +1,7 @@
-# pipes
-Infrastructure independent task execution framework based on logical task pipelines
+# pypipes
+[![Build Status](https://cloud.drone.io/api/badges/vani-public/pipes/status.svg)](https://cloud.drone.io/vani-public/pipes)
+
+Infrastructure independent task execution framework based on logical task pipelines.
 
 
 ## Examples
