@@ -1,6 +1,17 @@
 from setuptools import setup, find_packages
 
 
+test_requirements = [
+    'pytest',
+    'pytest-cov',
+    'mock',
+    'requests==2.22.0',
+    'bravado==10.4.1',
+    'redis==3.3.7',
+    'python-memcached==1.59',
+    'datadog==0.29.3'
+]
+
 setup(
     name='pypipes',
     description='Pipeline processing framework',
@@ -20,16 +31,7 @@ setup(
     setup_requires=[
         'setuptools_scm',
     ],
-    tests_require=[
-        'pytest',
-        'pytest-cov',
-        'mock',
-        'requests==2.22.0',
-        'bravado==10.4.1',
-        'redis==3.3.7',
-        'python-memcached==1.59',
-        'datadog==0.29.3'
-    ],
+    tests_require=test_requirements,
     extras_require={
         'gevent': ['gevent==1.4.0'],
         'celery': ['celery==4.3.0'],
@@ -38,7 +40,8 @@ setup(
         'redis': ['redis==3.3.7'],
         'memcached': ['python-memcached==1.59'],
         'crypto': ['pycrypto==2.6.1'],
-        'datadog': ['datadog==0.29.3']
+        'datadog': ['datadog==0.29.3'],
+        'tests': test_requirements
     },
     use_scm_version={'root': '.', 'relative_to': __file__}
 )
