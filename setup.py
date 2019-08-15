@@ -15,7 +15,7 @@ test_requirements = [
 setup(
     name='pypipes',
     description='Pipeline processing framework',
-    long_description=open('README.md').read(),
+    long_description=open('README.rst').read(),
     url='https://github.com/vani-public/pipes',
     author='Victor Anisimov',
     author_email='victor.anisimov@gmail.com',
