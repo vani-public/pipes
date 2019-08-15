@@ -38,8 +38,8 @@ steps:
   - name: dist
     image: python:3.7
     environment:
-      PYPI_USER:
-        from_secret: pypi_user
+      PYPI_USERNAME:
+        from_secret: pypi_username
       PYPI_PASSWORD:
         from_secret: pypi_password
     commands:
@@ -47,7 +47,7 @@ steps:
       - mkdir dist
       - git fetch --tags
       - python setup.py sdist
-      - twine upload dist/pypipes-${DRONE_TAG}.zip -u $PYPI_USER -p $PYPI_PASSWORD
+      - twine upload dist/pypipes-${DRONE_TAG}.zip -u $PYPI_USERNAME -p $PYPI_PASSWORD
     when:
       event:
         - tag
