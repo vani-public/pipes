@@ -7,7 +7,7 @@ test_requirements = [
     'mock',
     'requests==2.22.0',
     'bravado==10.4.1',
-    'redis==3.3.7',
+    'redis==4.4.4',
     'python-memcached==1.59',
     'datadog==0.29.3'
 ]
@@ -37,7 +37,7 @@ setup(
         'celery': ['celery==4.3.0'],
         'swagger': ['bravado==10.4.1'],
         'api': ['requests>=2.22.0'],
-        'redis': ['redis==3.3.7'],
+        'redis': ['redis==4.4.4'],
         'memcached': ['python-memcached==1.59'],
         'crypto': ['pycrypto==2.6.1'],
         'datadog': ['datadog==0.29.3'],
