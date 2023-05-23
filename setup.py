@@ -5,7 +5,7 @@ test_requirements = [
     'pytest',
     'pytest-cov',
     'mock',
-    'requests==2.22.0',
+    'requests==2.31.0',
     'bravado==10.4.1',
     'redis==4.4.4',
     'python-memcached==1.59',
